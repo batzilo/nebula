@@ -48,6 +48,7 @@ int main( int argc, char *argv[] )
 {
 	arg_check(argc, argv);
 	srand(time(NULL));
+	int N = atoi(argv[1]);
 
 	char left[] = { '`', '~', '1', '!', '2', '@', '3', '#', '4', '$', '5', '%',
 			'q', 'Q', 'w', 'W', 'e', 'E', 'r', 'R', 't', 'T',
@@ -62,7 +63,17 @@ int main( int argc, char *argv[] )
 	int left_length = 42;
 	int right_length = 52;
 
-	printf("a random left = %c\n" , left[ rand() % left_length ]);
-	printf("a random right = %c\n" , right[ rand() % right_length] );
+	int i;
+	char c, *password;
+	password = malloc(sizeof(char)*N);
+	for (i=0;i<N;i++)
+	{
+		if ( i%2==0 ) c = right[ rand() % right_length ];
+		else c = left[ rand() % left_length ];
+		password[i] = c;
+	}
+	password[i]='\0';
+
+	printf("%s\n", password);
 	return 0;
 }
