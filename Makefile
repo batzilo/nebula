@@ -1,7 +1,7 @@
 all : nebula
 
 CC = gcc
-CFLAGS = -O3 -g -Wall -Werror -std=c99 #-Wextra
+CFLAGS = -O3 -g -Wall -Werror -std=c99 -Wextra
 
 nebula : main.o
 	$(CC) -o $@ $^
