@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <time.h>
 
 #define N_ARG 2
 
@@ -46,6 +47,22 @@ void arg_check( int argc, char *argv[] )
 int main( int argc, char *argv[] )
 {
 	arg_check(argc, argv);
-	printf("Arguments ok!\n");
+	srand(time(NULL));
+
+	char left[] = { '`', '~', '1', '!', '2', '@', '3', '#', '4', '$', '5', '%',
+			'q', 'Q', 'w', 'W', 'e', 'E', 'r', 'R', 't', 'T',
+			'a', 'A', 's', 'S', 'd', 'D', 'f', 'F', 'g', 'G',
+			'z', 'Z', 'x', 'X', 'c', 'C', 'v', 'V', 'b', 'B' };
+
+	char right[]= { '6', '^', '7', '&', '8', '*', '9', '(', '0', ')', '-', '_', '=', '+', '\\', '|',
+			'y', 'Y', 'u', 'U', 'i', 'I', 'o', 'O', 'p', 'P', '[', '{', ']', '}',
+			'h', 'H', 'j', 'J', 'k', 'K', 'l', 'L', ';', ':', '\'', '\"',
+			'n', 'N', 'm', 'M', ',', '<', '.', '>', '/', '?' };
+
+	int left_length = 42;
+	int right_length = 52;
+
+	printf("a random left = %c\n" , left[ rand() % left_length ]);
+	printf("a random right = %c\n" , right[ rand() % right_length] );
 	return 0;
 }
