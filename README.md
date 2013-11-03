@@ -1,4 +1,4 @@
 nebula
 ======
 
-Strong but yet typing-friendly passwords generator
+Strong but yet typing-friendly password generator

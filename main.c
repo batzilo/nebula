@@ -8,11 +8,20 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <math.h>
 #include <ctype.h>
 #include <time.h>
 
 #define N_ARG 2
 
+// used after malloc
+void oom() {
+    fprintf(stderr, "Out of memory!\n");
+    exit(1);
+}
+
+// return true if char array num represent a number
 int is_number( char *num )
 {
 	int i=0;
@@ -24,6 +33,7 @@ int is_number( char *num )
 	return 1;
 }
 
+// argument check
 void arg_check( int argc, char *argv[] )
 {
 	if ( argc != N_ARG )
@@ -66,6 +76,9 @@ int main( int argc, char *argv[] )
 	int i;
 	char c, *password;
 	password = malloc(sizeof(char)*N);
+    if (!password) oom();
+
+    // make the password
 	for (i=0;i<N;i++)
 	{
 		if ( i%2==0 ) c = right[ rand() % right_length ];
