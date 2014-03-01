@@ -1,13 +1,17 @@
 # Makefile
-CC=gcc
+
+CC=/usr/bin/c99
+#CC=gcc
 CFLAGS=-g -Wall -Werror -Wextra -std=c99 -O3 -lm
 
-all : nebula
+everything=nebula
 
-nebula : main.c
+all : $(everything)
+
+% : %.c
 	$(CC) $(CFLAGS) -o $@ $^
 
 .PHONY : clean
 
 clean :
-	$(RM) nebula
+	$(RM) $(everything)
