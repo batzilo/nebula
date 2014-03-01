@@ -1,10 +1,12 @@
 # nebula
 
----
+
+
 ## What Is It ?
 Typing-Friendly Password Generator
 
----
+
+
 ## How It's Done ?
 Generate a Password. Type it *easy* like this:
 
@@ -16,6 +18,6 @@ Generate a Password. Type it *easy* like this:
     60 goto 20
 
 
----
+
 ## ChangeLog
 * 1st-March-2014 v0.1
