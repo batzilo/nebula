@@ -82,14 +82,14 @@ int main(int argc, char *argv[]) {
     }
 
     // generate password
-	for (i=0; i<N; i++) {
+	for (i=0; i<(N-1); i++) {
 		if ( i%2 == 0 )
             c = right[ rand() % right_length ];
 		else
             c = left[ rand() % left_length ];
 		password[i] = c;
 	}
-	password[i]='\0';
+	password[N-1]='\0';
 
 	printf("%s\n", password);
 
